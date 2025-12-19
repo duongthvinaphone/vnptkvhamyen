@@ -1,15 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+// Giả sử bạn có component App chính
+// import App from './App.tsx'; 
 
 const rootElement = document.getElementById('root');
+
 if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+  throw new Error("Không tìm thấy phần tử root!");
 }
 
-const root = ReactDOM.createRoot(rootElement);
+const root = createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <StrictMode>
+    <div className="min-h-screen bg-gray-50">
+      <h1 className="text-vnpt-blue font-bold">VNPT Sales Planning</h1>
+      {/* <App /> */}
+    </div>
+  </StrictMode>
 );
